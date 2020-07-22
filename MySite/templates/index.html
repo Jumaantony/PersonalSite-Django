@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{%block title%} Juma Antony {% endblock %}
+
+{% block content%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<div id="main">
+  <body>
+	<main id="headings">
+        <div class="image"> </div>
+        <div class="overlay"></div>
+
+        <h1 class="lg-heading">
+            Juma <span class="text-secondary">Antony</span>
+        </h1>
+
+        <h2 class="tagline">
+            Web Developer, Programmer
+        </h2>
+
+        <center class="more">
+            <button class="portfolio"> <a href="portfolio.html"> portfolio</a> </button>
+            <button class="skills"> <a href="portfolio.html"> skills</a> </button>
+            <button class="blog"> <a href="blog.html"> Blog</a> </button>
+            <button class="MyWork"> <a href="project.html"> Projects</a> </button>
+        </center>
+
+        </main>
+    </body>
+</div>
+
+{% endblock %}

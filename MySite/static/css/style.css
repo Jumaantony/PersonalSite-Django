@@ -1,0 +1,88 @@
+/** body start **/
+body {
+    background-image: url(../images/index-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    padding-left: -10;
+    z-index: -10;
+}
+
+
+.image {
+    background-image: url(../images/index-head.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    border: solid 3px rgb(235, 217, 57);
+    height: 200px;
+    width: 200px;
+    margin-left: 10%;
+}
+
+.lg-heading {
+    position: relative;
+    margin-top: -3%;
+    padding-left: 30%;
+    font-size: 90px;
+    color: aliceblue;
+    text-shadow: 6px 6px 10px rgba(224, 243, 10, 0.3);
+    letter-spacing: 1.5px;
+
+}
+
+.text-secondary {
+    color: rgb(235, 217, 57);
+    text-shadow: 6px 6px 10px rgba(243, 243, 247, 0.3);
+}
+
+.tagline {
+    position: relative;
+    text-align: center;
+    color: aliceblue;
+}
+
+.overlay {
+    position: absolute;
+    background-color: rgba(5, 4, 82, 0.5);
+    background-size: cover;
+    background-position: center;
+    height: 120%;
+    width: 100%;
+    z-index: -5;
+    top: 0px;
+    bottom: 0px;
+    position: fixed;
+}
+
+.more button {
+    margin-top: 4%;
+    margin-left: 2%;
+    padding: 10px;
+    border: 10px black;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgb(235, 217, 57);
+    transition: 1s;
+    overflow: hidden;
+}
+.more a{
+    color: black;
+}
+.more a:link {
+    margin-left: 3%;
+   text-decoration: none;
+}
+.more button:hover {
+    background-color: aliceblue;
+    color: #050349;
+    transition: .5s;
+}

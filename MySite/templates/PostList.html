@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%} Blog Posts {% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/post-list.css' %}">
+
+<div id="main">
+  <body>
+    <div class="Img-header"><h1 class="heading">My Blog</h1></div>
+
+    <div class="main-cont">
+        <div class="post-cont">
+            <div class="single-post">
+                {% for post in posts %}
+                <img class="featured-img" src="{{ post.featured_image.url }}">
+                <div class="post-body">
+                    <h2 class="post-title">
+                        <a href="{{ post.get_absolute_url }}">
+                        {{ post.title }}
+                        </a>
+                    </h2>
+                    <div class="author-date">
+                       <p> Published {{ post.publish }} by {{ post.author }}</p>
+                     </div>
+                    <p class="post-content">
+                        {{ post.body |safe | truncatewords:50 | linebreaks  }}
+                     </p>
+                     <button class="read-more"><a href="{{ post.get_absolute_url }}"> READ MORE → </a> </button>
+                </div>
+                {% endfor %}
+                {% include "pagination.html" %}
+            </div>
+
+        </div>
+
+        <div class="side-cont">
+
+            <div class="search"><h2 class="side-cont-title">Search</h2>
+                <input type="text" name="search" placeholder="Search for ..." class="search-for">
+                <button class="go">Go</button>
+            </div>
+
+            <div class="categories"> <h2 class="side-cont-title">Categories</h2>
+                <p class="sub-cat"><a href="" > Django</a></p>
+                <p class="sub-cat"><a href="" > Python</a></p>
+                <p class="sub-cat"><a href="" > PYQT5</a></p>
+            </div>
+
+            <div class="latest-posts"> <h2 class="side-cont-title">Latest Posts</h2>
+                  <p class="sub-cat"><a href="" >Django WYSIWYG Editor Integration</a></p>
+                  <p class="sub-cat"><a href="" >Rock, Paper, Scissors Game</a></p>
+                  <p class="sub-cat"><a href="" >PYQT5 Intro</a></p>
+            </div>
+
+            <div class="tags"><h2 class="side-cont-title">Tags</h2>
+                  <p class="sub-cat"><a href="" >Django WYSIWYG Editor Integration</a></p>
+                  <p class="sub-cat"><a href="" >Rock, Paper, Scissors Game</a></p>
+                  <p class="sub-cat"><a href="" >PYQT5 Intro</a></p>
+            </div>
+
+        </div>
+    </div>
+  </body>
+{% include "footer.html" %}
+</div>
+{% endblock %}

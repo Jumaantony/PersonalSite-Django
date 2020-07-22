@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%} About Me {% endblock %}
+
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/portfolio.css' %}">
+
+<div id="main">
+  <div>
+    <div class="portfolio">
+          <h1 align="center">PORTFOLIO</h1>
+    </div>
+
+    <center><img src="{% static 'images/logo.jpg' %}" class="pic" style="border-radius: 50%; height: 150px; width: 150px;"></center>
+
+    <div class="container">
+        <div class="content1">
+            <h2>About me</h2>
+            <p class="about">So, you wanna learn about me? Well… it’s complicated and pretty juicy. I don’t hold much back..
+                <br> I'm just but the lazy coder who loves writting series of codes without getting bored. Development is my game. <br>
+                <br>
+                I love computers and all that make up the computer itself.
+            </p>
+            <br>
+            <h2>hobbies and interests</h2>
+
+            <ul class="hobbies">
+                <li>Coding</li>
+                <li>Playing computer games</li>
+                <li>Listening to music</li>
+                <li>Watching movies</li>
+                <li>Cooking</li>
+            </ul>
+            <br>
+            <h2>Skills</h2>
+            <div class="skills">
+              <div class="skillset1">
+
+                <p class="set">Photoshop</p>
+                <div class="skill-cont">
+                  <div class="Photoshop">30%</div>
+                </div>
+
+                <p class="set">HTML5</p>
+                <div class="skill-cont">
+                  <div class="HTML5">70%</div>
+                </div>
+
+                <p class="set">CSS</p>
+                <div class="skill-cont">
+                  <div class="CSS">50%</div>
+                </div>
+
+                <p class="set">Java Script</p>
+                <div class="skill-cont">
+                  <div class="JS">10%</div>
+                </div>
+
+              </div>
+
+              <div class="skillset2">
+
+                <p class="set">Wordpress CMS</p>
+                <div class="skill-cont">
+                  <div class="wordpress">40%</div>
+                </div>
+
+                <p class="set">Python</p>
+                <div class="skill-cont">
+                  <div class="Python">30%</div>
+                </div>
+
+                <p class="set">Django</p>
+                <div class="skill-cont">
+                  <div class="Django">20%</div>
+                </div>
+
+                <p class="set">PYQT5</p>
+                <div class="skill-cont">
+                  <div class="PYQT5">30%</div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+        <div class="content2">
+            <br>
+            <h2> Educational background</h2>
+            <h3>2019 to present:</h3>
+            <h3>Udemy</h3>
+            <p class="edu">Complete Python Developer in 2020: Zero to Mastery</p>
+            <br>
+            <h3>2017 to present:</h3>
+            <h3>moi university</h3>
+            <p class="edu">Bachelor of Science(Information Sciences)</p>
+            <br>
+
+            <h3>2013 to 2016:</h3>
+            <h3>kisumu day high school</h3>
+            <p class="edu">Kenya Certificate of Secondary Education (K.C.S.E)</p>
+            <br>
+            <h3>2005 to 2012:</h3>
+            <h3>living streams primary and nusery school</h3>
+            <p class="edu">Kenya Certificate of Primary Education (K.C.P.E)</p>
+        </div>
+    </div>
+    <div class="content3">
+        <h2>REFEREES</h2>
+    </div>
+
+    <div class="ref-name">
+        <div class="content31"><h2>1. mr. shadrack <br> metto <br> No: 07xxxxxx </h2></div>
+        <div class="content32"><h2>2. mr. sailas <br> shitandi <br> No: 07xxxxxx </h2></div>
+        <div class="content33"><h2>3. rev joshua <br> ombok <br> No: 07xxxxxx</h2></div>
+    </div>
+
+  </div>
+
+     {% include "footer.html" %}
+</div>
+
+
+    {% endblock %}

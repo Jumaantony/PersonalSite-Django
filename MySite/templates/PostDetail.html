@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%} Detailed Post {% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/post-detail.css' %}">
+
+<div id="main">
+
+    <body>
+        <div class="main-cont">
+            <div class="post-cont">
+                <h1 class="blog-title">{{ post.title }}</h1>
+                <hr>
+                <p class="author">By: {{ post.author }}, {{ post.publish }}</p>
+				<p class="detailed"> {{ post.body|safe |linebreaks}} </p>
+                	<span class="share">
+                		<h3>Share</h3>
+		              <a href=""><i class="fa fa-facebook fa-2x" id="share-btns"></i></a>
+		              <a href=""><i class="fa fa-twitter fa-2x" id="share-btns"></i></a>
+		              <a href=""><i class="fa fa-linkedin fa-2x" id="share-btns"></i></a>
+		              <a href=""><i class="fa fa-whatsapp fa-2x" id="share-btns"></i></a>
+
+            		</span>
+
+            		<p class="comments-count"> 2 Thoughts</p>
+
+            		<div class="comment-info">
+            			<p class="comment-author">Comment 1 by wicked / 20th july 2030</p>
+            			<p class="comment-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla?</p>
+            		</div>
+
+            		<div class="comment-info">
+            			<p class="comment-author">Comment 2 by SandStorm / 20th july 2040</p>
+            			<p class="comment-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla?</p>
+            		</div>
+
+            		<hr>
+
+            		<h3 class="leave-comment">Leave a comment</h3>
+
+		            <form method="GET">
+		            	<input type="text" name="Name" placeholder="Your Name" maxlength="20" class="comment-form" required> <br>
+		            	<input type="email" name="e-mail-address" placeholder="Email-address" class="comment-form" required> <br>
+		            	<textarea name="comment" placeholder="Comment" class="comment-form" id="comment" required ></textarea><br>
+		            	<button type="POST" class="comment-btn">Comment</button>
+		            </form>
+            </div>
+
+
+            <div class="side-cont">
+            	<div class="search-sec">
+            		<input type="text" name="search" class="search-area" placeholder="  Search">
+            		<button type="GET"><i class="fa fa-search" id="search-btn"></i> </button>
+            	</div>
+
+            	<div>
+            		<h2 class="other-info"> Post Tagged as:</h2>
+            			<p id="side-info"><a href="">Python</a></p>
+            			<p id="side-info"><a href="">Django</a></p>
+            	</div>
+
+            	<div>
+            		<h2 class="other-info">Post Categorized as:</h2>
+	            		<p  id="side-info"><a href="">Python</a></p>
+	            		<p id="side-info"><a href="">Pyqt</a></p>
+	            		<p id="side-info"><a href="">django</a></p>
+            	</div>
+
+            	<div >
+            		<h2 class="other-info">Related Posts</a></h2>
+	            		<p id="side-info"><a href="">Hangaman Game</a></p>
+	            		<p id="side-info"><a href="">Django URls</a></p>
+	            		<p id="side-info"><a href="">Django WYSIWYG</a></p>
+            	</div>
+
+
+            </div>
+
+        </div>
+    </body>
+    {% include "footer.html" %}
+</div>
+
+{% endblock %}

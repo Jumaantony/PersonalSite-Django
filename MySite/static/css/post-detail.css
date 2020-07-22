@@ -1,0 +1,182 @@
+ /* body start */
+@media(min-width: 768px){
+  .main-cont{
+    display: flex;
+    margin: 5px;
+  }
+}
+
+.main-cont{
+    margin-left: 10px;
+  }
+
+.post-cont{
+  flex: 2;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.blog-title a{
+  text-decoration: none;
+  color: black;
+  text-transform: capitalize;
+  font-size: 40px;
+}
+
+.author{
+  text-indent: 10px;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 3px;
+}
+
+.detailed{
+  line-height: 25px;
+  padding: 3px;
+  text-align: justify;
+  margin-bottom: 5px;
+}
+
+.share h3{
+  padding-bottom: 5px;
+  color: #050349;
+  font-size: 25px;
+}
+
+
+#share-btns{
+  padding: 3px;
+  color: white;
+  height: 40px;
+  width: 70px;
+  border: 2px solid #0099ff;
+  border-radius: 3px;
+  align-self: center;
+  margin-left: 10px;
+  text-align: center;
+  background-color: #0099ff;
+  margin-bottom: 5px;
+}
+
+#share-btns:hover{
+  padding: 4px;
+  color: #0099ff;
+  background-color: white;
+  transition: .5s;
+  height: 42px;
+  width: 72px;
+}
+
+.comments-count{
+  font-size: 20px;
+  font-weight: bold;
+  background-color: aliceblue;
+  padding: 2px;
+  height: 30px;
+  text-indent: 20px;
+  margin-right: 50px;
+}
+
+.comment-info{
+  padding: 5px;
+  margin-left: 20px;
+}
+
+.comment-author{
+  font-weight: bold;
+  font-style: italic;
+  padding:
+}
+
+.comment-body{
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: aliceblue;
+  margin-right: 50px;
+}
+
+.leave-comment{
+  text-transform: capitalize;
+  padding: 7px;
+
+}
+
+.comment-form{
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #050349;
+  width: 400px;
+}
+
+#comment{
+  height: 180px;
+}
+
+.comment-btn{
+  font-weight: bolder;
+  border: 2px solid #050349;
+  padding: 5px;
+  background-color: #050349;
+  color: white;
+  margin-top: 2px;
+}
+
+.comment-btn:hover{
+  color: #050349;
+  background-color: white;
+  padding: 6px;
+  transition: .5s;
+}
+
+.side-cont{
+  flex: 1;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.search-sec{
+  padding: 4px;
+  height: 40px;
+}
+
+.search-area{
+  height: 35px;
+  width: 260px;
+  border: 2px solid #050349;
+  align-items: center;
+}
+
+#search-btn{
+  width: 35px;
+  height: 31px;
+  font-size: 22px;
+  font-weight: bolder;
+  align-content: center;
+}
+
+i{
+  padding: 2px;
+}
+
+.other-info{
+  padding: 5px;
+  margin-top: 25px;
+  text-align: center;
+  height: 35px;
+  background-color: #050349;
+  color: aliceblue;
+
+}
+
+#side-info a{
+  color: black;
+}
+
+#side-info {
+  color: black;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 18px;
+
+}

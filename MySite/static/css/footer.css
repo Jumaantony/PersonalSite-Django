@@ -1,0 +1,106 @@
+.footer-items{
+  background-color: aliceblue;
+  position:relative;
+}
+
+@media(min-width: 700px){
+  .footer-items{
+    justify-content: space-between;
+    display: flex;
+    }
+}
+
+.Sect1{
+  flex: 2;
+  padding: 10px;
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: url(../images/footer-logo.jpg);
+  position: absolute;
+  margin-bottom: 20px;
+}
+
+.logo-info{
+  margin-left: 110px;
+  margin-top: 20px;
+}
+
+.read{
+  color: gold;
+}
+
+.follow{
+  padding-top: 5px;
+  margin-top: 20px;
+}
+
+#social-media-btns{
+  font-size: 15px;
+  padding: 3px;
+  color: blue;
+}
+
+ a:link {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.Sect2{
+  flex: 1;
+  padding: 10px;
+}
+
+.Sect3{
+  flex: 1;
+  padding: 10px;
+}
+
+.Sect4{
+  flex: 1;
+  padding: 10px;
+}
+
+.foot-1{
+  text-transform: uppercase;
+  line-height: 30px;
+}
+
+.items a:link{
+  font-size: 14px;
+  line-height: 10px;
+}
+
+.foot-pages{
+  font-size: 13;
+  display: inline;
+}
+
+.form-control{
+  height: 30px;
+  padding: 2px;
+  border: 2px solid #050349;
+}
+
+.btn{
+  height: 30px;
+  width: 50px;
+  font-weight: bolder;
+  background-color: #050349;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover{
+  background-color: white;
+  transition: .5s;
+  padding: 1px;
+  color: #050349;
+
+}
+
+/* footer end */
