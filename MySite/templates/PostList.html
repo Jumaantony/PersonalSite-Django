@@ -2,8 +2,6 @@
 {% load static %}
 {% block title%} Blog Posts {% endblock %}
 
-
-
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/post-list.css' %}">
 
@@ -31,7 +29,7 @@
                      <button class="read-more"><a href="{{ post.get_absolute_url }}"> READ MORE → </a> </button>
                 </div>
                 {% endfor %}
-                {% include "pagination.html" %}
+                {% include "pagination.html" with page=posts %}
             </div>
 
         </div>

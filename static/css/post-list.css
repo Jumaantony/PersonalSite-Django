@@ -1,6 +1,7 @@
 /* body start */
 #main{
 flex: 1;
+
 }
 
 .Img-header{
@@ -32,6 +33,7 @@ flex: 1;
 .main-cont{
   margin: 2%;
   padding: 2px;
+  position: relative;
 }
 
 .post-cont{

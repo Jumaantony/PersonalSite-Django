@@ -1,13 +1,18 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/post-list.css' %}">
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/post-list.css' %}">
-
 
     <span class="pagination">
-        <a href="" class="step-links"> Previous</a>
+
+        {% if page.has_previous %}
+        <a href="?page={{page.previous_page_number}}" class="step-links"> Previous</a>
+        {% endif %}
+
         <span class="current">
-            Page 1 of 5
+            Page {{page.number}} of {{page.paginator.num_pages}}
         </span>
-        <a href="" class="step-links">Next</a>
+
+        {% if page.has_next %}
+        <a href="?page={{page.next_page_number}}" class="step-links">Next</a>
+        {% endif %}
     </span>

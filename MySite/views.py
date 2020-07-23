@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 from .models import Post
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 
 # Create your views here.
@@ -14,9 +16,21 @@ def portfolio(request):
 
 def PostList(request):
     posts = Post.published.all()
+
+    paginator = Paginator(posts, 3)
+    page = request.GET.get('page')
+
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
     return render(request,
                   'PostList.html',
-                  {'posts': posts})
+                  {'page':page,
+                   'posts': posts})
 
 
 def PostDetail(request, year, month, day, post):
@@ -28,9 +42,3 @@ def PostDetail(request, year, month, day, post):
     return render(request,
                   'PostDetail.html',
                   {'post': post})
-
-
-class PostListView(ListView):
-    queryset = Post.published.all()
-    context_object_name = 'posts'
-    template_name = 'PostList.html'

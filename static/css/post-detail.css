@@ -38,6 +38,27 @@
   margin-bottom: 5px;
 }
 
+.read-less{
+ text-decoration: none;
+ display: flex;
+ margin-top: 4px;
+ margin-bottom: 20px;
+ border: 2px solid #050349;
+ border-radius: .25rem;
+ background-color: white;
+ height: 30px;
+ width: 125px;
+ padding: 5px;
+ font-size: 15px;
+}
+
+.read-less:hover{
+  transition: 0.5;
+  padding: 6px;
+  width: 128px;
+  height: 33px;
+}
+
 .share h3{
   padding-bottom: 5px;
   color: #050349;
