@@ -14,13 +14,13 @@
 	<div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <br>
-  <a href="index.html">
+  <a href="{% url 'MySite:index' %}">
       <i class="fa fa-home" ></i> Home
   </a>
-  <a href="portfolio.html">
+  <a href="{% url 'MySite:portfolio' %}">
       <i class="fa fa-user"></i> Portfolio
   </a>
-  <a href="PostList.html">
+  <a href="{% url 'MySite:PostList' %}">
       <i class="fa fa-pencil-square-o"></i >Blog
   </a>
   <a href="projects.html">

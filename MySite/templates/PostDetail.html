@@ -12,7 +12,7 @@
         <div class="main-cont">
             <div class="post-cont">
                 <h1 class="blog-title">{{ post.title }}</h1>
-                <hr>
+				<hr>
                 <p class="author">By: {{ post.author }}, {{ post.publish }}</p>
 				<p class="detailed"> {{ post.body|safe |linebreaks}} </p>
 
@@ -26,41 +26,52 @@
 
             		</span>
 
-            		<p class="comments-count"> 2 Thoughts</p>
+					{% with comments.count as total_comments %}
 
-            		<div class="comment-info">
-            			<p class="comment-author">Comment 1 by wicked / 20th july 2030</p>
-            			<p class="comment-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla?</p>
-            		</div>
+						<p class="comments-count"> {{ total_comments }}  Thought {{ total_comments|pluralize}}</p>
+					
+					{% endwith %}
 
-            		<div class="comment-info">
-            			<p class="comment-author">Comment 2 by SandStorm / 20th july 2040</p>
-            			<p class="comment-body"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla?</p>
-            		</div>
+					{% for comment in comments %}
 
-            		<hr>
+						<div class="comment-info">
+							<p class="comment-author">
+								Comment {{ forloop.counter }} by {{ comment.name}}
+							</p>
+							<p class="comment-body"> 
+								{{ comment.body }}
+							</p>
+						</div>
+					
+					{% endfor %}
 
-            		<h3 class="leave-comment">Leave a comment</h3>
+					<hr>
+					
+					{% if new_comment %}
+						<h3>Your comment has been deliververd and waiting for an approval </h3>
+					{% else %}
 
-		            <form method="GET">
-		            	<input type="text" name="Name" placeholder="Your Name" maxlength="20" class="comment-form" required> <br>
-		            	<input type="email" name="e-mail-address" placeholder="Email-address" class="comment-form" required> <br>
-		            	<textarea name="comment" placeholder="Comment" class="comment-form" id="comment" required ></textarea><br>
-		            	<button type="POST" class="comment-btn">Comment</button>
-		            </form>
+						<h3 class="leave-comment">Leave a comment</h3>
+
+						<div class="comment-form">
+							<form method="post">
+	
+								{{ comment_form.as_p }}
+								{% csrf_token %}
+								
+						
+								<button type="submit" class="comment-btn">Comment</button>
+							</form>
+							
+						</div>
+					{% endif %}
             </div>
 
 
             <div class="side-cont">
             	<div class="search-sec">
-            		<input type="text" name="search" class="search-area" placeholder="  Search">
+            		<input type="text" name="search" class="search-area" placeholder="  Search" style=" margin-right: 5px;">
             		<button type="GET"><i class="fa fa-search" id="search-btn"></i> </button>
-            	</div>
-
-            	<div>
-            		<h2 class="other-info"> Post Tagged as:</h2>
-            			<p id="side-info"><a href="">Python</a></p>
-            			<p id="side-info"><a href="">Django</a></p>
             	</div>
 
             	<div>
@@ -81,7 +92,8 @@
             </div>
 
         </div>
-    </body>
+	</body>
+	
     {% include "footer.html" %}
 </div>
 

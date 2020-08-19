@@ -23,8 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # apps url
-    path('', include('MySite.urls')),
-    path('MySite/', include('MySite.urls', namespace='MySite')),
+    path('', include('MySite.urls', namespace='MySite')),
+    # path('MySite/', include('MySite.urls', namespace='MySite')),
 
     # ckeditor path
     path('ckeditor', include('ckeditor_uploader.urls')),

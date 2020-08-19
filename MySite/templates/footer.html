@@ -1,4 +1,5 @@
 {% load static %}
+{% load mysite_tags %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
 <footer>
           <div class="footer-items">
@@ -23,9 +24,7 @@
 
             <div class="Sect2">
               <h4 class="foot-1">Latest Posts</h4>
-                <p><a href="" class="items">Django WYSIWYG Editor Integration</a></p>
-                <p><a href="" class="items">Rock, Paper, Scissors Game</a></p>
-                <p><a href="" class="items">PYQT5 Intro</a></p>
+              {% show_latest_posts 4 %}
                 <br>
               <h4 class="foot-1">Categories</h4>
                 <p><a href="" class="items"> Django</a></p>
@@ -50,6 +49,7 @@
                   <a href="affiliate.html">Jumia Affiliate</a>
                   <a href="contact.html">Contact Me</a>
                 </div>
+              <br><br>
               <p>Subscribe to my latest newsletter, <br>
               To receive latest updates</p> <br>
               <div class="subscribe-body">
@@ -57,6 +57,9 @@
                   <input type="text" name="Subscribe" class="form-control" placeholder="Email address">
                   <button class="btn"> <i class="fa fa-paper-plane fa-1.8x"></i></button>
                 </div>
+                <buttton class="rss">
+                  <a href="{% url 'MySite:post_feed' %}"><i class="fa fa-rss fa-2x"></i></a>
+                </buttton>
               </div>
             </div>
           </div>

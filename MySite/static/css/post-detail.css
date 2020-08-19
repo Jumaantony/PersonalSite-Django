@@ -1,5 +1,5 @@
  /* body start */
-@media(min-width: 768px){
+ @media(min-width: 768px){
   .main-cont{
     display: flex;
     margin: 5px;
@@ -29,6 +29,7 @@
   font-weight: bold;
   font-size: 14px;
   margin: 3px;
+  font-style: italic;
 }
 
 .detailed{
@@ -71,7 +72,6 @@
 .comments-count{
   font-size: 20px;
   font-weight: bold;
-  background-color: aliceblue;
   padding: 2px;
   height: 30px;
   text-indent: 20px;
@@ -81,12 +81,12 @@
 .comment-info{
   padding: 5px;
   margin-left: 20px;
+  width: ;
 }
 
 .comment-author{
   font-weight: bold;
   font-style: italic;
-  padding:
 }
 
 .comment-body{
@@ -103,14 +103,27 @@
 }
 
 .comment-form{
-  padding: 5px;
-  margin-top: 5px;
-  border: 1px solid #050349;
-  width: 400px;
+  height: 250px;
 }
 
-#comment{
-  height: 180px;
+label {
+  float:left;
+  clear:both;
+  color:#333;
+  margin-bottom:4px;
+}
+
+textarea, input {
+  padding: 5px;
+  border: 2px solid #050349;
+  margin: 2px;
+  width: 303px;
+  background:#ededed;
+  font-size:12px;
+}
+
+textarea{
+  margin-left: 6px;
 }
 
 .comment-btn{
@@ -120,6 +133,7 @@
   background-color: #050349;
   color: white;
   margin-top: 2px;
+  margin-left: 270px;
 }
 
 .comment-btn:hover{
@@ -138,6 +152,7 @@
 .search-sec{
   padding: 4px;
   height: 40px;
+  margin-bottom: 5px;
 }
 
 .search-area{

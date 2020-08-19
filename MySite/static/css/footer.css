@@ -1,12 +1,16 @@
+footer{
+  
+}
+
 .footer-items{
   background-color: aliceblue;
-  position: relative;
 }
 
 @media(min-width: 700px){
   .footer-items{
     justify-content: space-between;
     display: flex;
+    margin-top: 0;
     }
 }
 

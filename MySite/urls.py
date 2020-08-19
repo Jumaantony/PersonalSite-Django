@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .feeds import LatestPostsFeed
 
 app_name = 'MySite'
 
@@ -8,9 +9,14 @@ urlpatterns = [
 
     path('portfolio.html', views.portfolio, name='portfolio'),
 
-    path('PostList.html', views.PostList, name='PostList'),
+    path ('PostList.html', views.PostList, name='PostList'),
 
     path('<int:year>/<int:month>/<int:day>/<slug:post>/',
          views.PostDetail, name='PostDetail'),
+    
+    path('feed/', LatestPostsFeed(), name='post_feed'),
 
+    path ('projects.html', views.Projects.as_view(), name='projects'),
+
+     path ('<slug:slug>/', views.ProjectDetail.as_view(), name='ProjectDetail'),
 ]

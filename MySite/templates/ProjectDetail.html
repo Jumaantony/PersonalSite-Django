@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load mysite_tags %}
+{% block title%} Project Description {% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/projects.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post-list.css' %}">
+    <div id="main">
+      <body>
+          <div class="main-cont">
+              <div class="post-cont">
+                  <h1 class="blog-title"><a href="">{{ object.title }} </a></h1>
+                  <hr>
+                  <p class="detailed"> 
+                    {{ object.body|safe |linebreaks}} 
+                  </p>
+          
+              </div>
+  
+              <div class="side-cont">
+                  <div class="search-sec">
+                      <input type="text" name="search" class="search-area" placeholder="  Search">
+                      <button type="GET"><i class="fa fa-search" id="search-btn"></i> </button>
+                  </div>
+  
+                  <div>
+                      <h2 class="other-info"> Project Tagged as:</h2>
+                          <p id="side-info"><a href="">Python</a></p>
+                          <p id="side-info"><a href="">Django</a></p>
+                  </div> 
+  
+                  <div>
+                      <h2 class="other-info">Project Category</h2>
+                          <p  id="side-info"><a href="">Python</a></p>
+                          <p id="side-info"><a href="">Pyqt</a></p>
+                          <p id="side-info"><a href="">django</a></p>
+                  </div>
+  
+                  <div >
+                      <h2 class="other-info">Related Projects</a></h2>
+                          <p id="side-info"><a href="">Hangaman Game</a></p>
+                          <p id="side-info"><a href="">Django URls</a></p>
+                          <p id="side-info"><a href="">Django WYSIWYG</a></p>
+                  </div>
+  
+              </div>
+          </div>
+    
+
+    {% include "footer.html" %}
+    </div>
+{% endblock %}
