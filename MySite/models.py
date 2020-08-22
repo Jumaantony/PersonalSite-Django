@@ -86,6 +86,8 @@ class Comment(models.Model):
     created = models.DateTimeField(auto_now_add = True)
     updated  = models.DateTimeField(auto_now_add = True)
     active = models.BooleanField(default = False)
+    parent = models.ForeignKey('self', null=True, blank=True, related_name='replies', on_delete=models.CASCADE)
+
 
     class Meta:
         ordering = ('created',)

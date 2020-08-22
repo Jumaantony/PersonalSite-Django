@@ -40,7 +40,36 @@
 							</p>
 							<p class="comment-body"> 
 								{{ comment.body }}
+								<button type="POST" class="show-reply-form" id="hide-reply-form" onclick="Openreply()">
+									Reply
+								</button>
 							</p>
+
+							{% for reply in comment.replies.all %}
+								<div class="reply-info">
+									<p class="reply-author">
+									{{ reply.name }} / {{ reply.created }}
+									</p>
+									<p class="reply-body">
+									{{ reply.body }}
+									</p>
+								</div>
+							{% endfor %}
+
+							  <div class="reply-cont" id="reply-form">
+								<h3 class="leave-comment">Leave a Reply</h3>
+			
+								<form method="POST">
+								  {{ comment_form.as_p }}
+								  {% csrf_token %}
+
+								  <input type="hidden" name="parent_id" value="{{ comment.id }}">
+								  
+
+								  <button type="submit" class="show-reply-form" id="hide-reply-form" class="comment-btn">Reply</button>
+
+								 </form>
+							  </div>
 						</div>
 					
 					{% endfor %}
@@ -59,7 +88,6 @@
 								{{ comment_form.as_p }}
 								{% csrf_token %}
 								
-						
 								<button type="submit" class="comment-btn">Comment</button>
 							</form>
 							
@@ -98,3 +126,14 @@
 </div>
 
 {% endblock %}
+
+<script type="text/javascript">
+function Openreply() {
+var x = document.getElementById("reply-form");
+if (x.style.display === "none") {
+   x.style.display = "block";
+} else {
+  x.style.display = "none";
+}
+}
+</script>

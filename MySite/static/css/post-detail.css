@@ -96,6 +96,25 @@
   margin-right: 50px;
 }
 
+.show-reply-form{
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.reply-info{
+  margin-left: 50px;
+}
+
+.reply-author{
+  font-style: italic;
+}
+
+.leave-comment{
+  text-transform: capitalize;
+  padding: 7px;
+
+}
+
 .leave-comment{
   text-transform: capitalize;
   padding: 7px;
