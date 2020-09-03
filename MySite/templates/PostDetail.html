@@ -40,7 +40,7 @@
 							</p>
 							<p class="comment-body"> 
 								{{ comment.body }}
-								<button type="POST" class="show-reply-form" id="hide-reply-form" onclick="Openreply()">
+								<button type="POST" class="show-reply-form"  onclick="Openreply()">
 									Reply
 								</button>
 							</p>
@@ -123,13 +123,10 @@
 	</body>
 	
     {% include "footer.html" %}
-</div>
-
-{% endblock %}
-
+</div>n 
 <script type="text/javascript">
 function Openreply() {
-var x = document.getElementById("reply-form");
+var x = document.getElementsByClassName('show-reply-form');
 if (x.style.display === "none") {
    x.style.display = "block";
 } else {
@@ -137,3 +134,5 @@ if (x.style.display === "none") {
 }
 }
 </script>
+{% endblock %}
+

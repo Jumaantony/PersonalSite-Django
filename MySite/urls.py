@@ -16,7 +16,9 @@ urlpatterns = [
     
     path('feed/', LatestPostsFeed(), name='post_feed'),
 
-    path ('projects.html', views.Projects.as_view(), name='projects'),
+    path ('projects.html', views.Projects.as_view(), name='Projects'),
 
      path ('<slug:slug>/', views.ProjectDetail.as_view(), name='ProjectDetail'),
+
+     path('contact.html', views.Contact, name='Contact'),
 ]

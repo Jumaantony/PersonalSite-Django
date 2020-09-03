@@ -1,7 +1,6 @@
 /* body start */
 #main{
 flex: 1;
-
 }
 
 .Img-header{
@@ -9,7 +8,6 @@ flex: 1;
   background-size: cover;
   height: 300px;
   width: 100%;
-  margin-top: -7%;
 }
 
 .heading{
@@ -33,7 +31,6 @@ flex: 1;
 .main-cont{
   margin: 2%;
   padding: 2px;
-  position: relative;
 }
 
 .post-cont{
@@ -54,7 +51,7 @@ flex: 1;
   width: 70%;
   align-self: center;
   margin-bottom: 10px;
-  margin-top: 5px;
+  border-radius: 15px;
 }
 
 .post-title{
@@ -67,7 +64,6 @@ flex: 1;
 .post-content{
   text-align: justify;
   flex: 1;
-  text-wrap: wrap;
 }
 
 .read-more{
@@ -104,10 +100,6 @@ flex: 1;
   flex: 1%;
   display: flex;
   flex-direction: column;
-  }
-
-  footer{
-    margin-top: -200px;
   }
 }
 
@@ -174,6 +166,7 @@ flex: 1;
   margin-top: 10px;
   height: 300px;
   border: 2px aliceblue solid;
+  font-size: 20px;
 }
 
 .tags{

@@ -65,6 +65,7 @@ def PostDetail(request, year, month, day, post):
                   'comments': comments,
                   'new_comment': new_comment,
                   'comment_form': comment_form})
+                  
 
 class Projects(generic.ListView):
     queryset = Project.objects.filter(status ='publish' ).order_by('-publish')
@@ -77,4 +78,6 @@ class ProjectDetail(generic.DetailView):
     template_name = 'ProjectDetail.html'
 
 
+def Contact(request):
+    return render(request, 'contact.html', {})
     

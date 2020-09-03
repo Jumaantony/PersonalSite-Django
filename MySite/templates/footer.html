@@ -34,20 +34,29 @@
 
             <div class="Sect3">
               <h4 class="foot-1">Recent Projects</h4>
-              <p><a href="" class="items">Personal Portfolio</a></p>
-              <p><a href="" class="items">PYQT5 calculator</a></p>
-              <p><a href="" class="items">Church Management System</a></p>
+              
+              
+              <br>
             </div>
 
             <div class="Sect4">
               <h4 class="foot-1">Pages</h4>
                 <div class="foot-pages">
-                  <a href="index.html">Home</a>
-                  <a href="portfolio.html">Portfolio</a>
-                  <a href="blog.html">Blog</a>
-                  <a href="projects.html">Projects</a>
-                  <a href="affiliate.html">Jumia Affiliate</a>
-                  <a href="contact.html">Contact Me</a>
+                  <a href="{% url 'MySite:index' %}">
+                    Home
+                </a>
+                <a href="{% url 'MySite:portfolio' %}">
+                     Portfolio
+                </a>
+                <a href="{% url 'MySite:PostList' %}">
+                    Blog
+                </a>
+                <a href="{% url 'MySite:Projects' %}">
+                     Projects
+                </a>
+                <a href="{% url 'MySite:Contact' %}">
+                     Contact Me
+                </a>
                 </div>
               <br><br>
               <p>Subscribe to my latest newsletter, <br>

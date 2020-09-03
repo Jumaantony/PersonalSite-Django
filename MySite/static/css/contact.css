@@ -1,0 +1,89 @@
+.cnct-header{
+    background-image: url(../images/contact.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    margin-top: -32px;
+}
+
+.cntct-head{
+    text-align: center;
+    color:#050349;
+    font-weight: bolder;
+    text-transform: capitalize;
+    font-size: 50px;
+    padding-top: 100px;
+}
+
+.map{
+    margin-top: 20px;
+    width: 80%;
+    height: 400px;
+    margin-left: 10%;
+    align-self: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+@media(min-width: 768px){
+    .contact-cont{
+      display: flex;
+    }
+    .form{
+        margin-left: 20px;
+    }
+  }
+
+  .contact-cont{
+    margin-left: 10%;
+    margin-right: 10% ;
+    margin-bottom: 3%;
+  }
+
+.contct{
+    flex: 1;
+    padding: 25px;
+    background-color: #050349;
+    color: aliceblue;
+    height: 280px;
+    border-radius: 4px;
+}
+
+
+.form{
+    padding-top:5px ;
+    flex: 2; 
+}
+
+.contct-name, .contct-email, .contct-message{
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    border:2px solid #050349;
+    border-radius: 4px;
+    font-style: italic;
+}
+
+.contct-message{
+    height: 100px;
+}
+
+.btn-message{
+    padding: 2px;
+    height: 35px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color:#050349;
+    color: aliceblue;
+    border: solid #050349 2px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.btn-message:hover{
+    background-color: aliceblue;
+    color: #050349;
+    padding: 4px;
+    transition: .5s;
+    font-size: 17px;
+}

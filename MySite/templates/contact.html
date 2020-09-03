@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load mysite_tags %}
+{% block title%} Contact Me {% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/contact.css' %}">
+
+<div id="main">
+    <div class="cnct-header"><h1 class="cntct-head">Get In Touch With Me</h1></div>
+  <body>
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1021393.4635832297!2d34.627645042213445!3d0.013033031194875134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa437ad4ac81d%3A0x2012a439d6248dd2!2sKisumu!5e0!3m2!1sen!2ske!4v1597886292295!5m2!1sen!2ske" class="map"></iframe>
+    </div>
+    <div class="contact-cont">
+        <div class="contct">
+          <h3> <i class="fa fa-address-card-o" aria-hidden="true"></i> Address </h3>
+            <p>Kisumu, 40100, Kenya</p><br>
+          <h3> <i class="fa fa-phone" aria-hidden="true"></i> Phone</h3>
+            <p>+254 742 491942</p><br>
+          <h3> <i class="fa fa-envelope-o" aria-hidden="true"></i> Email</h3>
+            <p>jumaantony840@gmail.com</p>
+        </div>
+
+        <div class="form">
+          <h1>Get In Touch</h1>
+          <form action="" method="POST">
+            <input type="text" name="message-name"  placeholder="Your Name" class="contct-name">
+            
+            <input type="email" name="message-email"  placeholder="Your Email" class="contct-email">
+            <br>
+
+            <textarea name="message" placeholder="Your Message" class="contct-message"></textarea>
+            <br>
+            
+            <button type="submit" class="btn-message ">Send Message</button>
+          </form>
+
+        </div>
+    </div>
+
+    {% include "footer.html" %}
+  </body>
+
+{% endblock %}
