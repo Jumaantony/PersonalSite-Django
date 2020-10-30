@@ -2,11 +2,11 @@ from django.contrib import admin
 from .models import Post
 from .models import Comment, Project
 
-
 # Register your models here.
 
 # changing the admin header
 admin.site.site_header = "Juma Antony"
+
 
 # admin.site.register(Post)
 @admin.register(Post)
@@ -18,6 +18,7 @@ class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'publish'
     ordering = ('status', 'publish')
 
+
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'post', 'created', 'active', 'body')
@@ -27,6 +28,7 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(active=True)
+
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):

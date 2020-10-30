@@ -6,7 +6,6 @@ from .forms import CommentForm
 from django.views import generic
 
 
-
 # Create your views here.
 def index(request):
     return render(request, 'index.html', {})
@@ -30,7 +29,7 @@ def PostList(request):
 
     return render(request,
                   'PostList.html',
-                  {'page':page,
+                  {'page': page,
                    'posts': posts})
 
 
@@ -39,8 +38,7 @@ def PostDetail(request, year, month, day, post):
                              status='published',
                              publish__year=year,
                              publish__month=month,
-                             publish__day=day,)
-   
+                             publish__day=day, )
 
     # list of active comments
     comments = post.comments.filter(active=True)
@@ -62,13 +60,13 @@ def PostDetail(request, year, month, day, post):
     return render(request,
                   'PostDetail.html',
                   {'post': post,
-                  'comments': comments,
-                  'new_comment': new_comment,
-                  'comment_form': comment_form})
-                  
+                   'comments': comments,
+                   'new_comment': new_comment,
+                   'comment_form': comment_form})
+
 
 class Projects(generic.ListView):
-    queryset = Project.objects.filter(status ='publish' ).order_by('-publish')
+    queryset = Project.objects.filter(status='publish').order_by('-publish')
     template_name = 'projects.html'
     paginate_by = 3
 
@@ -80,4 +78,3 @@ class ProjectDetail(generic.DetailView):
 
 def Contact(request):
     return render(request, 'contact.html', {})
-    

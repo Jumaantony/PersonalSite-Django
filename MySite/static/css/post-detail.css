@@ -47,6 +47,7 @@
 
 
 #share-btns{
+  display: inline;
   padding: 3px;
   color: white;
   height: 40px;

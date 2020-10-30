@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,9 +41,119 @@ INSTALLED_APPS = [
     'MySite',
     'ckeditor',
     'ckeditor_uploader',
+    'django_social_share',
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+JAZZMIN_SETTINGS = {
+    # title of the window
+    'site_title': 'Juma Antony',
+
+    # Title on the brand, and the login screen (19 chars max)
+    'site_header': 'My Portfolio Site',
+
+    # square logo to use for your site, must be present in static files, used for favicon and brand on top left
+    
+
+    # Welcome text on the login screen
+    'welcome_sign': 'Hi Antony, Welcome to your Administration',
+
+    # Copyright on the footer
+    'copyright': 'Juma Antony',
+
+    # The model admin to search from the search bar, search bar omitted if excluded
+    'search_model': 'auth.User',
+
+    # Field name on user model that contains avatar image
+    'user_avatar': None,
+
+    ############
+    # Top Menu #
+    ############
+
+    # Links to put along the top menu
+    'topmenu_links': [
+
+        # Url that gets reversed (Permissions can be added)
+        {'name': 'Home',  'url': 'admin:index', 'permissions': ['auth.view_user']},
+
+        # external url that opens in a new window (Permissions can be added)
+        
+
+        # model admin to link to (Permissions checked against model)
+        {'model': 'auth.User'},
+
+        # App with dropdown menu to all its models pages (Permissions checked against models)
+        {'app': 'MySite'},
+    ],
+
+    #############
+    # User Menu #
+    #############
+
+    # Additional links to include in the user menu on the top right ('app' url type is not allowed)
+    'usermenu_links': [
+        {'name': 'Support', 'url': 'https://github.com/farridav/django-jazzmin/issues', 'new_window': True},
+        {'model': 'auth.user'}
+    ],
+
+    #############
+    # Side Menu #
+    #############
+
+    # Whether to display the side menu
+    'show_sidebar': True,
+
+    # Whether to aut expand the menu
+    'navigation_expanded': True,
+
+    # Hide these apps when generating side menu e.g (auth)
+    'hide_apps': [],
+
+    # Hide these models when generating side menu (e.g auth.user)
+    'hide_models': [],
+
+    # List of apps to base side menu ordering off of (does not need to contain all apps)
+    'order_with_respect_to': ['accounts', 'blog'],
+
+    # Custom links to append to app groups, keyed on app name
+    
+
+    # Custom icons for side menu apps/models See https://www.fontawesomecheatsheet.com/font-awesome-cheatsheet-5x/
+    # for a list of icon classes
+    'icons': {
+        'auth': 'fas fa-users-cog',
+        'auth.user': 'fas fa-user',
+        'auth.Group': 'fas fa-users',
+        'blog.comments': 'fas fa-pencil-square-o'
+    },
+    # Icons that are used when one is not manually specified
+    'default_icon_parents': 'fas fa-chevron-circle-right',
+    'default_icon_children': 'fas fa-circle',
+
+    #############
+    # UI Tweaks #
+    #############
+    # Relative paths to custom CSS/JS scripts (must be present in static files)
+    "custom_css": None,
+    "custom_js": None,
+    # Whether to show the UI customizer on the sidebar
+    "show_ui_builder": False,
+
+    ###############
+    # Change view #
+    ###############
+    # Render out the change view as a single form, or in tabs, current options are
+    # - single
+    # - horizontal_tabs (default)
+    # - vertical_tabs
+    # - collapsible
+    # - carousel
+    "changeform_format": "horizontal_tabs",
+    # override change forms on a per modeladmin basis
+    "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs",},
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,7 +170,9 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

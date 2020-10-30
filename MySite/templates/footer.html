@@ -34,7 +34,11 @@
 
             <div class="Sect3">
               <h4 class="foot-1">Recent Projects</h4>
-              
+                {% for project in project_list %}
+
+                  <p class="sub-cat"><a href="{% url 'MySite:ProjectDetail' project.slug %}">{{project.title}}</a></p>
+
+                {% endfor %}
               
               <br>
             </div>

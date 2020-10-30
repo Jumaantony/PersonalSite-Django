@@ -13,7 +13,6 @@ class PublishedManager(models.Manager):
 
 
 class Post(models.Model):
-
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published')
@@ -47,8 +46,8 @@ class Post(models.Model):
 
 class Project(models.Model):
     STATUS_CHOICES = (
-        ('draft','Draft'),
-        ('publish','Published')
+        ('draft', 'Draft'),
+        ('publish', 'Published')
     )
 
     title = models.CharField(max_length=100)
@@ -58,11 +57,10 @@ class Project(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     publish = models.DateTimeField(default=timezone.now)
     updated = models.DateField(auto_now_add=True)
-    status = models.CharField(max_length=10, choices = STATUS_CHOICES, default='draft')
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
 
     objects = models.Manager()  # default manager
     published = PublishedManager()  # custom manager
-    
 
     class Meta:
         ordering = ('-publish',)
@@ -71,18 +69,15 @@ class Project(models.Model):
         return self.title
 
 
-
-
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete = models.CASCADE, related_name = 'comments')
-    name = models.CharField(max_length = 80)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
-    created = models.DateTimeField(auto_now_add = True)
-    updated  = models.DateTimeField(auto_now_add = True)
-    active = models.BooleanField(default = False)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=False)
     parent = models.ForeignKey('self', null=True, blank=True, related_name='replies', on_delete=models.CASCADE)
-
 
     class Meta:
         ordering = ('created',)
