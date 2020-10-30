@@ -47,7 +47,7 @@ class Post(models.Model):
 class Project(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Draft'),
-        ('publish', 'Published')
+        ('published', 'Published')
     )
 
     title = models.CharField(max_length=100)

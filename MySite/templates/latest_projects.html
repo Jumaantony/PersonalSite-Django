@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/post-list.css' %}">
+
+<ul>
+    {% for project in latest_projects %}
+
+        <p class="sub-cat"><a href="{% url 'MySite:ProjectDetail' project.slug %}">{{project.title}}</a></p>
+
+    {% endfor %}
+</ul>

@@ -9,16 +9,16 @@ urlpatterns = [
 
     path('portfolio.html', views.portfolio, name='portfolio'),
 
-    path ('PostList.html', views.PostList, name='PostList'),
+    path('PostList.html', views.PostList, name='PostList'),
 
     path('<int:year>/<int:month>/<int:day>/<slug:post>/',
          views.PostDetail, name='PostDetail'),
-    
+
     path('feed/', LatestPostsFeed(), name='post_feed'),
 
-    path ('projects.html', views.Projects.as_view(), name='Projects'),
+    path('projects.html', views.Projects.as_view(), name='Projects'),
 
-     path ('<slug:slug>/', views.ProjectDetail.as_view(), name='ProjectDetail'),
+    path('<slug:slug>/', views.ProjectDetail.as_view(), name='ProjectDetail'),
 
-     path('contact.html', views.Contact, name='Contact'),
+    path('contact.html', views.Contact, name='Contact'),
 ]
