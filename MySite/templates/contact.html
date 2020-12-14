@@ -12,6 +12,7 @@
     <div>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1021393.4635832297!2d34.627645042213445!3d0.013033031194875134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa437ad4ac81d%3A0x2012a439d6248dd2!2sKisumu!5e0!3m2!1sen!2ske!4v1597886292295!5m2!1sen!2ske" class="map"></iframe>
     </div>
+
     <div class="contact-cont">
         <div class="contct">
           <h3> <i class="fa fa-address-card-o" aria-hidden="true"></i> Address </h3>
@@ -24,7 +25,12 @@
 
         <div class="form">
           <h1>Get In Touch</h1>
-          <form action="" method="POST">
+          <h6>{{message_name}}</h6>
+          <br>
+
+          <form action="{% url 'MySite:Contact' %}" method="POST">
+            {% csrf_token %}
+
             <input type="text" name="message-name"  placeholder="Your Name" class="contct-name">
             
             <input type="email" name="message-email"  placeholder="Your Email" class="contct-email">

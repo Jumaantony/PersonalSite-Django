@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'django_social_share',
+    'taggit',
 ]
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
@@ -242,3 +243,11 @@ STATIC_ROOT = 'static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media/'
+
+# Email settings
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TSL = False
+# EMAIL_USE_SSL = False

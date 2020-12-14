@@ -11,6 +11,8 @@ urlpatterns = [
 
     path('PostList.html', views.PostList, name='PostList'),
 
+    path('tag/<slug:tag_slug>/', views.PostList, name='PostList_by_tag'),
+
     path('<int:year>/<int:month>/<int:day>/<slug:post>/',
          views.PostDetail, name='PostDetail'),
 
