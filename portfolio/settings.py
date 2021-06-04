@@ -43,7 +43,17 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'django_social_share',
     'taggit',
+    'taggit_templatetags2',
 ]
+
+TAGGIT_TAG_MODEL = ('MySite','Post')
+
+TAGGIT_TAGGED_ITEM_MODEL = ('MySite','Post')
+
+TAGGIT_TAG_LIST_ORDER_BY = 'name'
+
+TAGGIT_TAG_CLOUD_ORDER_BY = '-num_times'
+
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 

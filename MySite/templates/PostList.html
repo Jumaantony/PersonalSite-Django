@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load mysite_tags %}
+{% load taggit_templatetags2_tags %}
+{% get_taglist as tags for 'MySite.Post:tags' %}
 {% block title%} Blog Posts {% endblock %}
 
 {% block content %}
@@ -32,7 +34,6 @@
                             <a href="{% url 'MySite:PostList_by_tag' tag.slug %}">
                                 {{ tag.name }}
                             </a>
-                            {% if not forloop.last %}, {% endif %}
                         {% endfor %}
                     </p>
 
@@ -66,9 +67,12 @@
             </div>
 
             <div class="categories"> <h2 class="side-cont-title">Tags</h2>
-                <p class="sub-cat"><a href="" > Django</a></p>
-                <p class="sub-cat"><a href="" > Python</a></p>
-                <p class="sub-cat"><a href="" > PYQT5</a></p>
+                    <ul>
+                        {% for Tag in tags %}
+                            <li>{{tag}} ({{tag.num_times}})</li>
+                        {% endfor %}
+                    </ul>
+
             </div> 
 
             <div class="tags"><h2 class="side-cont-title">Most Commented Posts</h2>

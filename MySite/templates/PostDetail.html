@@ -103,9 +103,14 @@
 
             	<div >
             		<h2 class="other-info">Related Posts</a></h2>
-	            		<p id="side-info"><a href="">Hangaman Game</a></p>
-	            		<p id="side-info"><a href="">Django URls</a></p>
-	            		<p id="side-info"><a href="">Django WYSIWYG</a></p>
+						{% for post in similar_posts %}
+							<p>
+								<a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+							</p>
+						{% empty %}
+							There are no similar posts yet
+						{% endfor %}
+
             	</div>
 
 
